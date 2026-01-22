@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -71,3 +72,6 @@ export default defineConfig([
   },
 ])
 ```
+=======
+# AdFusion--AI-powered-Advertisement-Video-Generator-using-MERN-Stack
+>>>>>>> 756c2273d82af790b7f9a80085b82d05e5490619
