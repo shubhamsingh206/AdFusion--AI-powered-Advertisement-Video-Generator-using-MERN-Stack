@@ -1,77 +1,130 @@
-<<<<<<< HEAD
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 AdFusion
 
-Currently, two official plugins are available:
+### AI-powered Advertisement Video Generator (MERN Stack) project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+AdFusion is a full-stack MERN application that automatically generates short advertisement videos by combining **product images** and **creator images**.  
+The project focuses on real-world digital marketing use cases and demonstrates modern **full-stack + media processing** skills.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🖼️ Upload **Product Image** and **Creator Image**
+- 🎬 Automatically generate advertisement video
+- ⚡ Smooth and responsive UI
+- 🔄 Asynchronous video processing
+- ☁️ Scalable backend architecture
+- 📥 Download generated ad video
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧠 How It Works
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. User uploads:
+   - Product image
+   - Creator image
+2. Backend processes images
+3. Images are merged with transitions, text & effects
+4. Advertisement video is generated
+5. Final video is available for preview & download
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React.js
+- Tailwind CSS
+- Framer Motion
+- Axios
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Multer (file uploads)
+- FFmpeg (video processing)
+
+---
+
+## 📂 Project Structure
+
+```txt
+client/
+ ├── src/
+ │   ├── components/
+ │   ├── pages/
+ │   ├── assets/
+ │   └── App.jsx
+server/
+ ├── controllers/
+ ├── routes/
+ ├── models/
+ ├── utils/
+ └── server.js
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-=======
-# AdFusion--AI-powered-Advertisement-Video-Generator-using-MERN-Stack
->>>>>>> 756c2273d82af790b7f9a80085b82d05e5490619
+├── src
+├── pages
+│ ├── Result.tsx
+│ ├── Community.tsx
+│ ├── Plans.tsx
+│ ├── Loading.tsx
+│ ├── MyGenerations.tsx
+│ ├── Home.tsx
+│ └── Genetator.tsx
+├── assets
+│ ├── model1.png
+│ ├── model2.jpg
+│ ├── product1.jpg
+│ ├── product2.jpg
+│ ├── product3.jpg
+│ ├── product4.jpg
+│ ├── product5.jpg
+│ ├── product6.jpg
+│ ├── product7.png
+│ ├── generated1.png
+│ ├── generated2.png
+│ ├── generated3.png
+│ ├── generated4.png
+│ ├── generatedVideo1.mp4
+│ ├── generatedVideo2.mp4
+│ ├── noise.svg
+│ ├── favicon.svg
+│ ├── dummy-data.tsx
+│ ├── logo.svg
+│ └── assets.tsx
+├── Types
+│ └── index.ts
+├── main.tsx
+├── components
+│ ├── SoftBackdrop.tsx
+│ ├── lenis.tsx
+│ ├── Buttons.tsx
+│ ├── UploadZone.tsx
+│ ├── Title.tsx
+│ ├── Footer.tsx
+│ ├── Features.tsx
+│ ├── CTA.tsx
+│ ├── Faq.tsx
+│ ├── Navbar.tsx
+│ ├── Pricing.tsx
+│ └── Hero.tsx
+├── App.tsx
+└── index.css
+├── tsconfig.json
+├── vite.config.ts
+├── public
+├── noise.svg
+└── logo.svg
+├── .gitignore
+├── index.html
+├── tsconfig.node.json
+├── eslint.config.js
+├── tsconfig.app.json
+├── package.json
+└── README.md

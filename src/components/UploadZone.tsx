@@ -13,10 +13,13 @@ const UploadZone = ({ label, file, onclear, onchange }: UploadZoneProps) => {
           ? "border-violet-600/50 bg-violet-500/5"
           : "border-white/10 hover:border-violet-500/30 hover:bg-white/5"
       }`}
-      {file ? (
+
+      {
+        file ? (
     <>
     <img src={URL.createObjectURL(file)} alt="preview"
-className="absolute inset-0 w-full h-full object-cover rounded-x1
+
+<div className="absolute inset-0 w-full h-full object-cover rounded-x1
 opacity-60"/>
 <div className="absolute inset-0 flex items-center justify-center
 opacity-0 group-hover: opacity-100 transition-opacity bg-black/40
