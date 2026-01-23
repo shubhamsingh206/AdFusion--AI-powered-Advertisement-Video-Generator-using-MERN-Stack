@@ -14,6 +14,7 @@ const UploadZone = ({ label, file, onclear, onchange }: UploadZoneProps) => {
           : "border-white/10 hover:border-violet-500/30 hover:bg-white/5"
       }`}
 
+
       {
         file ? (
     <>

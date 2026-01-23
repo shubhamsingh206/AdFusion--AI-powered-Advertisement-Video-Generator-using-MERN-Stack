@@ -4,7 +4,7 @@
 
 ### AI-powered Advertisement Video Generator (MERN Stack) project
 
-AdFusion is a full-stack MERN application that automatically generates short advertisement videos by combining **product images** and **creator images**.  
+AdFusion i a full-stack MERN application that automatically generates short advertisement videos by combining **product images** and **creator images**.  
 The project focuses on real-world digital marketing use cases and demonstrates modern **full-stack + media processing** skills.
 
 ---
