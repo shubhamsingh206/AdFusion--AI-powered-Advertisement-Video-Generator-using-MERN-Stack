@@ -23,8 +23,8 @@ The project focuses on real-world digital marketing use cases and demonstrates m
 ## 🧠 How It Works
 
 1. User uploads:
-   - Product image
-   - Creator image
+   - Product image.
+   - Creator image.
 2. Backend processes images
 3. Images are merged with transitions, text & effects
 4. Advertisement video is generated
