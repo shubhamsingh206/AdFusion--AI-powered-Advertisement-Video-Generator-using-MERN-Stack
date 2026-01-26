@@ -11,7 +11,7 @@ The project focuses on real-world digital marketing use cases and demonstrates m
 
 ## ✨ Features
 
-- 🖼️ Upload **Product Image** and **Creator Image**
+- 🖼️ Upload **Product Images** and **Creator Image**
 - 🎬 Automatically generate advertisement video
 - ⚡ Smooth and responsive UI
 - 🔄 Asynchronous video processing
