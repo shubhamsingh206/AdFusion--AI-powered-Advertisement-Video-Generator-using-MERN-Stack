@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-# 🚀 AdFusion
+# 🚀 AdFusionn
 
 ### AI-powered Advertisement Video Generator (MERN Stack) project
 
