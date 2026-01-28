@@ -27,14 +27,14 @@ const Genetator = () => {
 
   return (
     <div className="min-h-screen text-white p-6 md:p-12 mt-28">
-      <form onSubmit={handleGenerate} className="max-w-4xl mx-auto mb-40">
+      <form onSubmit={handleGenerate} className="max-w-4xl mx-auto mb-40  ">
         <Title
           heading="Create In-Context Image"
           description="Upload your model and product images to generate stunning UGC,short-form videos and social media posts"
         />
         <div className="flex gap-20 max-sm:flex-col items-start justify-between">
           {/*Left  col */}
-          <div className="flex flex-col w-full sm:max-w-60 gap-6 mt-8 mb-12">
+          <div className="flex flex-col w-full sm:max-w-60 gap-8 mt-8 mb-12">
             <UploadZone
               label="Product Image"
               file={productImage}
