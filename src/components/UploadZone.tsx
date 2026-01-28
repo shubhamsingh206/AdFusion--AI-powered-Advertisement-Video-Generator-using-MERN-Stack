@@ -42,7 +42,7 @@ const UploadZone = ({ label, file, onClear, onChange }: UploadZoneProps) => {
 
             <h3 className="text-lg font-semibold mb-2">{label}</h3>
             <p className="text-sm text-gray-400 text-center max-w-[200px]">
-              Drag & drop or click to uploadS
+              Drag & drop or click to upload
             </p>
 
             <input
