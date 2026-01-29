@@ -61,7 +61,41 @@ const Genetator = () => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Name your project"
                 required
-                className="w-full bg-white/3 rounede-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none transition-all"
+                className="w-full bg-white/3 rounede-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 
+                outline-none transition-all"
+              />
+            </div>
+            <div className="mb-4 text-gray-300">
+              <label htmlFor="productName" className="block text-sm mb-4">
+                Product Name
+              </label>
+              <input
+                type="text"
+                id="productName"
+                value={productName}
+                onChange={(e) => setProductName(e.target.value)}
+                placeholder="Enter the name of the project"
+                required
+                className="w-full bg-white/3 rounede-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 
+                outline-none transition-all"
+              />
+            </div>
+            <div className="mb-4 text-gray-300">
+              <label
+                htmlFor="productDescription"
+                className="block text-sm mb-4"
+              >
+                Product Description{" "}
+                <span className="text-xs text-violet-400">(optional)</span>
+              </label>
+              <textarea
+                id="Product Description"
+                rows={4}
+                value={productDescription}
+                onChange={(e) => setProductDescription(e.target.value)}
+                placeholder="Enter the discription of the product"
+                className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 
+                focus:border-violet-500/50 outline-none resize-none transition-none transition-all"
               />
             </div>
           </div>
