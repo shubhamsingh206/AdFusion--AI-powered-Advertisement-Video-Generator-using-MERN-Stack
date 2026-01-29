@@ -49,8 +49,21 @@ const Genetator = () => {
             />
           </div>
           {/*Right  col */}
-          <div>
-            <p>Right col</p>
+          <div className="w-full">
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-sm mb-4">
+                Project Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name your project"
+                required
+                className="w-full bg-white/3 rounede-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none transition-all"
+              />
+            </div>
           </div>
         </div>
       </form>
