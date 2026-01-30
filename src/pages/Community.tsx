@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Project } from "../Types";
 import { dummyGenerations } from "../assets/assets";
 import { Loader2Icon } from "lucide-react";
+import ProjectCard from "../components/ProjectCard";
 
 const Community = () => {
   const [projects, setprojects] = useState<Project[]>([]);
@@ -33,7 +34,12 @@ const Community = () => {
         {/* projects list */}
         <div className="columns-1 sm: columns-2 lg: columns-3 gap-4">
           {projects.map((project) => (
-            <div>{project.productName}</div>
+            <ProjectCard
+              key={project.id}
+              gen={project}
+              setGenerations={setprojects}
+              forCommunity={true}
+            />
           ))}
         </div>
       </div>
