@@ -16,9 +16,9 @@ const MyGenerations = () => {
     fetchMyGenerations();
   }, []);
   return loading ? (
-  <div className="flex items-center justify-center min-h-screen">
+  <di className="flex items-center justify-center min-h-screen">
       <Loader2Icon className="size-7 animate-spin text-indigo-400" />
-    </div>
+    </di>
   )
 }
 export default MyGenerations;
