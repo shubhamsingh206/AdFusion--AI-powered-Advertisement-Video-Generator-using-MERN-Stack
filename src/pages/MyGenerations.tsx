@@ -21,4 +21,4 @@ const MyGenerations = () => {
     </div>
   )
 }
-export default MyGeneration;
+export default MyGenerations;
