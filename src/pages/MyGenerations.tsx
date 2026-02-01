@@ -9,7 +9,7 @@ const MyGenerations = () => {
   const fetchMyGenerations = async () => {
     setTimeout(() => {
       setGenerations(dummyGenerations);
-      setLoading(false);
+      setLoading(true);
     }, 3000);
   };
   useEffect(() => {
