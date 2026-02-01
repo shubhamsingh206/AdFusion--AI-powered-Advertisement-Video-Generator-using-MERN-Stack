@@ -13,7 +13,7 @@ const MyGenerations = () => {
     }, 3000);
   };
   useEffect(() => {
-    fetchMyGeneration();
+    fetchMyGenerations();
   }, []);
   return loading ? (
   <div className="flex items-center justify-center min-h-screen">
