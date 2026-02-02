@@ -32,7 +32,7 @@ const Community = () => {
         </header>
 
         {/* projects list */}
-        <div className="columns-1 sm: columns-2 lg: columns-3 gap-4">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

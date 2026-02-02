@@ -33,7 +33,7 @@ const MyGenerations = () => {
         </header>
 
         {/* generations list */}
-        <div className="columns-1 sm: columns-2 lg: columns-3 gap-4">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
           {generations.map((gen) => (
             <ProjectCard
               key={gen.id}
