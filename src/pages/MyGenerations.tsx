@@ -3,13 +3,14 @@ import type { Project } from "../Types";
 import { dummyGenerations } from "../assets/assets";
 import { Loader2Icon } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
+import { PrimaryButton } from "../components/Buttons";
 
 const MyGenerations = () => {
   const [generations, setGenerations] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const fetchMyGenerations = async () => {
     setTimeout(() => {
-      setGenerations(dummyGenerations);
+      setGenerations([]);
       setLoading(false);
     }, 3000);
   };
@@ -44,10 +45,14 @@ const MyGenerations = () => {
         </div>
 
         {generations.length === 0 && (
-          <div>
-            <h3>No generations yet</h3>
-            <p>Start creating stunning product photos today</p>
-            <PrimaryButton></PrimaryButton>
+          <div className="text-center py-20 bg-white/5 rounded-xl border border-white/10">
+            <h3 className="text-xl font-medium mb-2">No generations yet</h3>
+            <p className="text-gray-400 mb-6">
+              Start creating stunning product photos today
+            </p>
+            <PrimaryButton onClick={() => (window.location.href = "/generate")}>
+              Create New Generations
+            </PrimaryButton>
           </div>
         )}
       </div>
