@@ -42,6 +42,14 @@ const MyGenerations = () => {
             />
           ))}
         </div>
+
+        {generations.length === 0 && (
+          <div>
+            <h3>No generations yet</h3>
+            <p>Start creating stunning product photos today</p>
+            <PrimaryButton></PrimaryButton>
+          </div>
+        )}
       </div>
     </div>
   );
