@@ -11,7 +11,7 @@ const Community = () => {
     setTimeout(() => {
       setprojects(dummyGenerations);
       setLoading(false);
-    }, 3000);
+    }, 2000);
   };
   useEffect(() => {
     fetchProjects();
