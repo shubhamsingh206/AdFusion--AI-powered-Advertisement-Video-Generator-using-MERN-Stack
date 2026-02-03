@@ -10,7 +10,7 @@ const MyGenerations = () => {
   const [loading, setLoading] = useState(true);
   const fetchMyGenerations = async () => {
     setTimeout(() => {
-      setGenerations([]);
+      setGenerations(dummyGenerations);
       setLoading(false);
     }, 3000);
   };
