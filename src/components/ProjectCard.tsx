@@ -60,7 +60,7 @@ const ProjectCard = ({
             )}
             {gen.isPublished && (
               <span className="text-xs px-2 py-1 bg-green-600/30 rounded-full">
-                Publishe
+                Published
               </span>
             )}
           </div>
