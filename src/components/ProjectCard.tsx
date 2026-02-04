@@ -2,8 +2,7 @@ import type React from "react";
 import type { Project } from "../Types";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { img } from "framer-motion/client";
-import { EllipsisIcon, ImageIcon, Loader2Icon, PlaySquareIcon } from "lucide-react";
+import { EllipsisIcon, ImageIcon, Loader2Icon, PlaySquareIcon, Share2Icon, Trash2Icon } from "lucide-react";
 
 const ProjectCard = ({
   gen,
@@ -16,6 +15,17 @@ const ProjectCard = ({
 }) => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleDelete = async (id: string)=>{
+    const confirm = window. confirm('Are you sure you want to delete this project?');
+    if(!confirm) return;
+    console.log(id)
+  }
+
+   const togglePublish = async (projectId: string)=>{
+  
+    console.log(projectId)
+  }
 
   return (
     <div key={gen.id} className="mb-4 break-inside-avoid">
@@ -83,6 +93,13 @@ const ProjectCard = ({
                   {gen.generatedVideo && <a href="#" download className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer" >
                   <PlaySquareIcon size={14} /> Download Video
                   </a>}
+                  {(gen.generatedVideo || gen.generatedImage) && <button onClick={()=> navigator.share({url: gen. 
+                  generatedVideo || gen.generatedImage, title: gen.productName, text: gen.productDescription})} 
+                  className="w-full flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer"> 
+                  <Share2Icon size={14}/> Share </button>}
+                  <button onClick={()=> handleDelete(gen.id)} 
+                  className="w-full flex gap-2 items-center px-4 py-2 hover:bg-red-950/10 text-red-400 cursor-pointer">
+                    <Trash2Icon size={14}/> Delete</button>
                   </ul>
               </div>  
             </div>
