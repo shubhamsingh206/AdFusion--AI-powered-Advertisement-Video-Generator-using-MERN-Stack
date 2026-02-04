@@ -3,7 +3,7 @@ import type { Project } from "../Types";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { img } from "framer-motion/client";
-import { EllipsisIcon, Loader2Icon } from "lucide-react";
+import { EllipsisIcon, ImageIcon, Loader2Icon } from "lucide-react";
 
 const ProjectCard = ({
   gen,
@@ -67,9 +67,20 @@ const ProjectCard = ({
 
           {/* Action menu for my generations only */}
           {!forCommunity && (
-            <div className="absolute right-3 top-3 sm:opacity-0 group-hover: opacity-100 transition flex items-center gap-2">
+            <div 
+            onMouseDownCapture={()=>{setMenuOpen(true)}}
+            onMouseLeave={()=>{setMenuOpen(false)}}
+            className="absolute right-3 top-3 sm:opacity-0 group-hover:opacity-100 transition flex items-center gap-2">
               <div className="absolute top-3 right-3">
-                <EllipsisIcon className="ml-auto bg-black/10 rounded-full p-1 size-7" />
+                <EllipsisIcon className="ml-auto bg-black/50 rounded-full p-1 size-7" />
+              </div>
+              <div className="flex flex-col items-end w-32 text-sm">
+                <ul className={`text-xs ${menuOpen ? 'block' : 'hidden'} verflow-hidden right-0 peer-focus:block hover:block w-40
+                 bg-black/50 backdrop-blur text-white border border-gray-500/ 50 rounded-1g shadow-md mt-2 py-1 z-10`}>
+                  {gen.generatedImage && <a href="#" download className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer" >
+                  <ImageIcon size={14} /> Download Image
+                  </a>}
+                  </ul>
               </div>
             </div>
           )}
