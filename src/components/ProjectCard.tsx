@@ -3,7 +3,7 @@ import type { Project } from "../Types";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { img } from "framer-motion/client";
-import { EllipsisIcon, ImageIcon, Loader2Icon } from "lucide-react";
+import { EllipsisIcon, ImageIcon, Loader2Icon, PlaySquareIcon } from "lucide-react";
 
 const ProjectCard = ({
   gen,
@@ -76,12 +76,15 @@ const ProjectCard = ({
               </div>
               <div className="flex flex-col items-end w-32 text-sm">
                 <ul className={`text-xs ${menuOpen ? 'block' : 'hidden'} verflow-hidden right-0 peer-focus:block hover:block w-40
-                 bg-black/50 backdrop-blur text-white border border-gray-500/ 50 rounded-1g shadow-md mt-2 py-1 z-10`}>
+                 bg-black/50 backdrop-blur text-white border border-gray-500/50 rounded-1g shadow-md mt-2 py-1 z-10`}>
                   {gen.generatedImage && <a href="#" download className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer" >
                   <ImageIcon size={14} /> Download Image
                   </a>}
+                  {gen.generatedVideo && <a href="#" download className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer" >
+                  <PlaySquareIcon size={14} /> Download Video
+                  </a>}
                   </ul>
-              </div>
+              </div>  
             </div>
           )}
 
