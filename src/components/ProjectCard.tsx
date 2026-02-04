@@ -3,6 +3,7 @@ import type { Project } from "../Types";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { EllipsisIcon, ImageIcon, Loader2Icon, PlaySquareIcon, Share2Icon, Trash2Icon } from "lucide-react";
+import { GhostButton, PrimaryButton } from "./Buttons";
 
 const ProjectCard = ({
   gen,
@@ -75,6 +76,7 @@ const ProjectCard = ({
             )}
           </div>
 
+
           {/* Action menu for my generations only */}
           {!forCommunity && (
             <div 
@@ -85,18 +87,21 @@ const ProjectCard = ({
                 <EllipsisIcon className="ml-auto bg-black/50 rounded-full p-1 size-7" />
               </div>
               <div className="flex flex-col items-end w-32 text-sm">
-                <ul className={`text-xs ${menuOpen ? 'block' : 'hidden'} verflow-hidden right-0 peer-focus:block hover:block w-40
-                 bg-black/50 backdrop-blur text-white border border-gray-500/50 rounded-1g shadow-md mt-2 py-1 z-10`}>
+                <ul className={`text-xs ${menuOpen ? 'block' : 'hidden'} overflow-hidden right-0 peer-focus:block hover:block w-40
+                 bg-black/50 backdrop-blur text-white border border-gray-500/50 rounded-lg shadow-md mt-2 py-1 z-10`}>
                   {gen.generatedImage && <a href="#" download className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer" >
                   <ImageIcon size={14} /> Download Image
                   </a>}
+
                   {gen.generatedVideo && <a href="#" download className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer" >
                   <PlaySquareIcon size={14} /> Download Video
                   </a>}
+
                   {(gen.generatedVideo || gen.generatedImage) && <button onClick={()=> navigator.share({url: gen. 
                   generatedVideo || gen.generatedImage, title: gen.productName, text: gen.productDescription})} 
                   className="w-full flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer"> 
                   <Share2Icon size={14}/> Share </button>}
+
                   <button onClick={()=> handleDelete(gen.id)} 
                   className="w-full flex gap-2 items-center px-4 py-2 hover:bg-red-950/10 text-red-400 cursor-pointer">
                     <Trash2Icon size={14}/> Delete</button>
@@ -120,8 +125,10 @@ const ProjectCard = ({
             />
           </div>
         </div>
+
         {/* details */}
         <div className="p-4">
+
           {/* product name, date, aspect ratio */}
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -143,6 +150,8 @@ const ProjectCard = ({
               </div>
             </div>
           </div>
+
+
           {/* product description */}
           {gen.productDescription && (
             <div className="mt-3">
@@ -152,12 +161,29 @@ const ProjectCard = ({
               </div>
             </div>
           )}
+
+
           {/* User prompt */}
           {gen.userPrompt && (
             <div className="mt-3">
               <div className="text-xs text-gray-300">{gen.userPrompt}</div>
             </div>
           )}
+
+          {/* Buttons */}
+          {!forCommunity && (
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <GhostButton className="text-xs justify-center"
+              onClick={()=> {navigate(`/result/${gen.id}`); scrollTo(0,0)}}> 
+                   View Details
+                </GhostButton>
+                <PrimaryButton onClick={()=> togglePublish(gen.id)}
+                className="rounded-md">
+                    {gen. isPublished ? 'Unpublish' : 'Publish'}
+                </PrimaryButton>
+              </div>
+            )}
+
         </div>
       </div>
     </div>
