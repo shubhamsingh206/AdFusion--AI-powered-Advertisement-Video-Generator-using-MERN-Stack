@@ -6,7 +6,7 @@ import { Link, Loader2Icon, RefreshCwIcon } from "lucide-react";
 const Result = () => {
   const [project, setProjectData] = useState<Project>({} as Project)
   const [loading, setLoading] = useState(true)
-  const [isGenerating, setIsGenerating] = useState(false)
+  const [isGenerating, setIsGeneratin] = useState(false)
   
   const fetchProjectData = async ()=>{
     setTimeout (()=>{
