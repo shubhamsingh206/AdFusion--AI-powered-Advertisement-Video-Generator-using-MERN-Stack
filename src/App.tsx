@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import LenisScroll from "./components/lenis";
 import { Route, Routes } from "react-router-dom";
 import Genetator from "./pages/Genetator";
-import { Result } from "./pages/Result";
+import Result  from "./pages/Result";
 import MyGenerations from "./pages/MyGenerations";
 import Community from "./pages/Community";
 import Plans from "./pages/Plans";
