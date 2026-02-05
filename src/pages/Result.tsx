@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Project } from "../Types";
 import { dummyGenerations } from "../assets/assets";
-import { Loader2Icon } from "lucide-react";
+import { Link, Loader2Icon, RefreshCwIcon } from "lucide-react";
 
 const Result = () => {
   const [project, setProjectData] = useState<Project>({} as Project)
@@ -28,7 +28,10 @@ const Result = () => {
     <div className="max-w-6xl mx-auto">
       <header>
         <h1>Generation Result</h1>
-        <Link></Link>
+        <Link to="/generate" className="btn-secondary text-sm flex items-center gap-2">
+           <RefreshCwIcon className="w-4 h-4" />
+           <p className="max-sm:hidden'">New Generation</p>
+         </Link>
         </header>
       </div>
     </div>
