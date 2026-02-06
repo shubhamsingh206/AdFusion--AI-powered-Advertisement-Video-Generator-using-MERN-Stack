@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import type { Project } from "../Types";
 import { dummyGenerations } from "../assets/assets";
-import { Loader2Icon, RefreshCwIcon } from "lucide-react";
+import { ImageIcon, Loader2Icon, RefreshCwIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { GhostButton } from "../components/Buttons";
 
 const Result = () => {
   const [project, setProjectData] = useState<Project>({} as Project)
@@ -55,6 +56,25 @@ const Result = () => {
 
             </div>
           </div>
+        </div>
+        {/* Sidebar Action */}
+        <div className="space-y-6">
+          {/* Download Button */}
+          <div className="glass-panel p-6 rounded-2xl">
+            <h3 className="text-x1 font-semibold mb-4">Actions</h3>
+            <div className="flex flex-col gap-3">
+              <a href={project.generatedImage} download>
+                <GhostButton disabled={!project.generatedImage}
+                className="w-full justify-center rounded-md py-3
+                disabled: opacity-50 disabled: cursor-not-allowed">
+                  <ImageIcon className="size-4.5"/>
+                  Download Image
+                </GhostButton>
+              </a>
+            </div>
+          </div>
+            {/* Generate video button */}
+            <div></div>
         </div>
       </div>
     </div>
