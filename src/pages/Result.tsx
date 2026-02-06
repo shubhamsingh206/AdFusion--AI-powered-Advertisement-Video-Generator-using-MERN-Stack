@@ -35,8 +35,20 @@ const Result = () => {
           <p className="max-sm:hidden">New Generation</p>
           </Link>
         </header>
+
         {/* grid layout */}
         <div className="grid lg:grid-cols-3 gap-8"></div>
+
+        {/* Main Result Display */}
+        <div className="lg:col-span-2 space-y-6">
+          <div className="glass-panel inline-block p-2 rounded-2xl">
+            <div className={`${project?. aspectRatio === '9:16' ? 'aspect-9/16' :
+              'aspect-video'} sm:max-h-200 rounded-xl bg-gray-900 overflow-hidden
+              relative`}>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
