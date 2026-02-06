@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Project } from "../Types";
 import { dummyGenerations } from "../assets/assets";
-import { ImageIcon, Loader2Icon, RefreshCwIcon } from "lucide-react";
+import { ImageIcon, Loader2Icon, RefreshCwIcon, VideoIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GhostButton } from "../components/Buttons";
 
@@ -38,8 +38,7 @@ const Result = () => {
         </header>
 
         {/* grid layout */}
-        <div className="grid lg:grid-cols-3 gap-8"></div>
-
+        <div className="grid lg:grid-cols-3 gap-8">
         {/* Main Result Display */}
         <div className="lg:col-span-2 space-y-6">
           <div className="glass-panel inline-block p-2 rounded-2xl">
@@ -61,14 +60,22 @@ const Result = () => {
         <div className="space-y-6">
           {/* Download Button */}
           <div className="glass-panel p-6 rounded-2xl">
-            <h3 className="text-x1 font-semibold mb-4">Actions</h3>
+            <h3 className="text-xl font-semibold mb-4">Actions</h3>
             <div className="flex flex-col gap-3">
               <a href={project.generatedImage} download>
                 <GhostButton disabled={!project.generatedImage}
                 className="w-full justify-center rounded-md py-3
-                disabled: opacity-50 disabled: cursor-not-allowed">
+                disabled:opacity-50 disabled:cursor-not-allowed">
                   <ImageIcon className="size-4.5"/>
                   Download Image
+                </GhostButton>
+              </a>
+              <a href={project.generatedVideo} download>
+                <GhostButton disabled={!project.generatedVideo}
+                className="w-full justify-center rounded-md py-3
+                disabled:opacity-50 disabled:cursor-not-allowed">
+                  <VideoIcon className="size-4.5"/>
+                  Download Video
                 </GhostButton>
               </a>
             </div>
@@ -78,6 +85,8 @@ const Result = () => {
         </div>
       </div>
     </div>
+  </div>
+
   );
 };
 
