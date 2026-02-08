@@ -4,7 +4,7 @@ import SoftBackdrop from "./components/SoftBackdrop";
 import Footer from "./components/Footer";
 import LenisScroll from "./components/lenis";
 import { Route, Routes } from "react-router-dom";
-import Genetator from "./pages/Genetator";
+import Generator from "./pages/Generator";
 import Result  from "./pages/Result";
 import MyGenerations from "./pages/MyGenerations";
 import Community from "./pages/Community";
@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/generate" element={<Genetator />} />
+        <Route path="/generate" element={<Generator />} />
         <Route path="/result/:projectId" element={<Result />} />
         <Route path="/my-generations" element={<MyGenerations />} />
         <Route path="/community" element={<Community />} />

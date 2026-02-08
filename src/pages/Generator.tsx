@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { PrimaryButton } from "../components/Buttons";
 
-const Genetator = () => {
+const Generator = () => {
   const [name, setName] = useState("");
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
@@ -100,7 +100,7 @@ const Genetator = () => {
                 rows={4}
                 value={productDescription}
                 onChange={(e) => setProductDescription(e.target.value)}
-                placeholder="Enter the discription of the product"
+                placeholder="Enter the description of the product"
                 className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 
                 focus:border-violet-500/50 outline-none resize-none transition-none transition-all"
               />
@@ -167,4 +167,4 @@ const Genetator = () => {
   );
 };
 
-export default Genetator;
+export default Generator;
