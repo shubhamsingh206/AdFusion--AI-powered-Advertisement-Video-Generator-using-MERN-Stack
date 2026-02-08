@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
-import { useClerk, useUser } from "@clerk/clerk-react";
+import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 
 export default function Navbar() {
   const navigate = useNavigate()
@@ -60,6 +60,9 @@ export default function Navbar() {
             <GhostButton onClick={()=> navigate('/plans')} className='border-none text-gray-300 sm:py-1.5'>
               Credits:
             </GhostButton>
+            <UserButton>
+              
+            </UserButton>
           </div>
 
         )}
