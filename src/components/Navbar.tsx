@@ -4,10 +4,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
-import { useUser } from "@clerk/clerk-react";
+import { useClerk, useUser } from "@clerk/clerk-react";
 
 export default function Navbar() {
   const {user} = useUser()
+  const {openSignIn, openSignUp} = useClerk()
+
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -44,10 +46,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <button className="text-sm font-medium text-gray-300 hover:text-white transition max-sm:hidden">
+          <button onClick={()=> openSignIn()} className="text-sm font-medium text-gray-300 hover:text-white transition max-sm:hidden">
             Sign in
           </button>
-          <PrimaryButton className="max-sm:text-xs hidden sm:inline-block">
+          <PrimaryButton onClick={()=> openSignUp()} className="max-sm:text-xs hidden sm:inline-block">
             Get Started
           </PrimaryButton>
         </div>
