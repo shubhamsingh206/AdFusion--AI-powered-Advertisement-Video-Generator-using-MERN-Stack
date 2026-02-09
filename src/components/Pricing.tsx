@@ -12,7 +12,7 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto px-4">
         <Title
           title="Pricing"
-          heading="pricing Plans"
+          heading="Pricing plans"
           description="Our Pricing Plans are simple, transparent and flexible. Choose the plan that best suits your needs."
         />
 

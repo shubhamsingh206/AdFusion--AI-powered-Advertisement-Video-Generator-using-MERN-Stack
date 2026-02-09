@@ -36,19 +36,22 @@ export const plansData = [
   },
   {
     id: "pro",
-    name: "pro",
+    name: "Pro",
     price: "$30",
     desc: "Creators & small teams.",
     credits: 80,
     features: [
       "80 Credits",
-      "HD quality', 'No watermark', 'Video generation','Priority support",
+      'HD quality',
+      'No watermark',
+      'Video generation',
+      'Priority support'
     ],
     popular: true,
   },
   {
     id: "ultra",
-    name: "ultra",
+    name: "Ultra",
     price: "$99",
     desc: "Scale across teams and agencies.",
     credits: 300,
