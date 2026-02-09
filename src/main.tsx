@@ -3,6 +3,7 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ClerkProvider } from '@clerk/clerk-react'
+import { dark } from "@clerk/themes";
 
 
 // Import your Publishable Key
@@ -15,6 +16,7 @@ if (!PUBLISHABLE_KEY) {
 createRoot(document.getElementById("root")! as HTMLElement).render(
   <ClerkProvider 
   appearance={{
+    baseTheme: dark,
     variables: {
       colorPrimary: '#4f39f6',
       colorTextOnPrimaryBackground: "#ffffff"
