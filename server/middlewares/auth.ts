@@ -10,6 +10,6 @@ NextFunction)=>{
         }
         next()
         } catch (error: any) {
-            res.status(401). json({message: error.code | | error.message})
+            res.status(401). json({message: error.code || error.message})
         }
     }
