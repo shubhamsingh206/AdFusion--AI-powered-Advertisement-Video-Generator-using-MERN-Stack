@@ -22,7 +22,7 @@ export const getAllProjects = async (req: Request, res: Response) =>{
 }
 
 // get project by id 
-export const getAllProjectById = async (req: Request, res: Response) =>{
+export const getProjectById = async (req: Request, res: Response) =>{
     try{
 
     } catch (error: any) {
