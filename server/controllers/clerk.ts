@@ -11,6 +11,7 @@ const clerkWebhooks = async (req: Request, res: Response) =>{
 
         //Switch Cases for different Events
         switch (type){
+            // Safe create + update
             case "user.created": {
                 await prisma.user.create({
                     data: {
@@ -38,7 +39,8 @@ const clerkWebhooks = async (req: Request, res: Response) =>{
             }
             
              case "user.deleted": {
-                await prisma.user.delete({where: {id: data.id}})
+                await prisma.user.deleteMany({
+                    where: {id: data.id}})
                 break;
             }
 
@@ -55,7 +57,7 @@ const clerkWebhooks = async (req: Request, res: Response) =>{
                     }
                     console.log(planId)
 
-                    await prisma.user.update({
+                    await prisma.user.updateMany({
                         where: {id: clerkUserId,},
                         data: {
                             credits: {increment: credits[planId]}
@@ -69,8 +71,10 @@ const clerkWebhooks = async (req: Request, res: Response) =>{
                 break;
         }
 
-        res.json({message: "Webhook Recieved : " + type})
+        res.json({message: "Webhook Received : " + type})
+
     } catch (error: any) {
+        console.error("WEBHOOK ERROR:", error);
         res. status (500).json({ message: error.message });
         
     }
