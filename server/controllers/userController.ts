@@ -1,0 +1,42 @@
+import { Request, Response } from 'express';
+import * as Sentry from "@sentry/node"
+
+//Get User Credits
+export const getUserCredits = async (req: Request, res: Response) =>{
+    try{
+
+    } catch (error: any) {
+            Sentry.captureException(error)
+            res.status(500).json({ message: error.message || error.message});           
+    }
+}
+
+// const get all user projects
+export const getAllProjects = async (req: Request, res: Response) =>{
+    try{
+
+    } catch (error: any) {
+            Sentry.captureException(error)
+            res.status(500).json({ message: error.message || error.message});           
+    }
+}
+
+// get project by id 
+export const getAllProjectById = async (req: Request, res: Response) =>{
+    try{
+
+    } catch (error: any) {
+            Sentry.captureException(error)
+            res.status(500).json({ message: error.message || error.message});           
+    }
+}
+
+// publish / unpublish project
+export const toggleProjectPublic = async (req: Request, res: Response) =>{
+    try{
+
+    } catch (error: any) {
+            Sentry.captureException(error)
+            res.status(500).json({ message: error.message || error.message});           
+    }
+}
