@@ -40,6 +40,15 @@ export const getAllProjects = async (req: Request, res: Response) =>{
 export const getProjectById = async (req: Request, res: Response) =>{
     try{
 
+        const {userId} = req.auth();
+        const {projectId} = req.params;
+
+        const project = await prisma.project.findUnique({
+            where: {id: projectId, userId}
+        })
+        if (!project) { return res.status(404).json({message: 'Project not found' })}
+        res.json({project})
+
     } catch (error: any) {
             Sentry.captureException(error)
             res.status(500).json({ message: error.message || error.message});           
@@ -49,6 +58,15 @@ export const getProjectById = async (req: Request, res: Response) =>{
 // publish / unpublish project
 export const toggleProjectPublic = async (req: Request, res: Response) =>{
     try{
+
+        const {userId} = req.auth();
+        const {projectId} = req.params;
+
+        const project = await prisma.project.findUnique({
+            where: {id: projectId, userId}
+        })
+        if (!project) { return res.status(404).json({message: 'Project not found' })}
+        res.json({project})
 
     } catch (error: any) {
             Sentry.captureException(error)
