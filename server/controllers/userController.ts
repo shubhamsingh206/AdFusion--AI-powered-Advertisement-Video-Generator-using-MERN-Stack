@@ -66,7 +66,14 @@ export const toggleProjectPublic = async (req: Request, res: Response) =>{
             where: {id: projectId, userId}
         })
         if (!project) { return res.status(404).json({message: 'Project not found' })}
-        res.json({project})
+        if(!project?.generatedImage && !project?.generatedVideo){
+            return res.status(404). json({message: 'image or video not generated' })
+        }
+        await prisma.project.update({
+            where: {id: projectId},
+            data: {isPublished: !project.isPublished}
+        })
+        res. json({isPublished: !project.isPublished})
 
     } catch (error: any) {
             Sentry.captureException(error)
