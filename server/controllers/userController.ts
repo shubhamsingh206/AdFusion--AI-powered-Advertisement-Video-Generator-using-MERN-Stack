@@ -46,6 +46,7 @@ export const getProjectById = async (req: Request, res: Response) =>{
         const project = await prisma.project.findUnique({
             where: {id: projectId, userId}
         })
+        
         if (!project) { return res.status(404).json({message: 'Project not found' })}
         res.json({project})
 
@@ -70,7 +71,7 @@ export const toggleProjectPublic = async (req: Request, res: Response) =>{
             return res.status(404). json({message: 'image or video not generated' })
         }
         await prisma.project.update({
-            where: {id: projectId},
+            where: { id: projectId },
             data: {isPublished: !project.isPublished}
         })
         res. json({isPublished: !project.isPublished})
