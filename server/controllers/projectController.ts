@@ -161,6 +161,11 @@ export const createProject = async (req:Request, res: Response) => {
         }
         if(isCreditDeducted){
             // add credits back
+            await prisma.user.update({
+                where: {id: userId},
+                data: {credits: {increment: 5}}
+            })
+        }
         Sentry.captureException(error);
         res.status(500).json({ message: error.message });
     }
