@@ -183,7 +183,19 @@ export const createVideo = async (req:Request, res: Response) => {
         return res.status(401).json({ message: 'Insufficient credits' });
     }
 
+    //deduct credits for video generation
+    await prisma.user.update({
+        where: {id: userId},
+        data: {credits: {decrement: 10}}
+    }).then(()=>{ isCreditDeducted = true} );
+
     try {
+
+        const project = await prisma.project.findUnique({
+            where: {id: projectId, userId},
+            include: {user: true}
+        })
+
 
     } catch (error:any) {
         Sentry.captureException(error);
