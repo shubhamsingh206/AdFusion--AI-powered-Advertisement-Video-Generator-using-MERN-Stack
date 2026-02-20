@@ -152,6 +152,15 @@ export const createProject = async (req:Request, res: Response) => {
             res.json({projectId: project.id})
 
     } catch (error:any) {
+        if(tempProjectId!){
+            // update project status and error message
+            await prisma.project.update({
+                where: {id: tempProjectId},
+                data: {isGenerating: false, error: error.message}
+            })
+        }
+        if(isCreditDeducted){
+            // add credits back
         Sentry.captureException(error);
         res.status(500).json({ message: error.message });
     }
