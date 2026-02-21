@@ -1,6 +1,6 @@
 import { DollarSignIcon, FolderEditIcon, GalleryHorizontalEnd, MenuIcon, SparkleIcon, XIcon } from "lucide-react";
 import { GhostButton, PrimaryButton } from "./Buttons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
@@ -38,6 +38,12 @@ export default function Navbar() {
         console.log(error);
       }
     }
+
+    useEffect(()=>{
+      if(user){
+        (async ()=> await getUserCredits())();
+      }
+      },[user, pathname])
 
   return (
     <motion.nav
@@ -77,7 +83,7 @@ export default function Navbar() {
         ) : (
           <div className='flex gap-2'>
             <GhostButton onClick={()=> navigate('/plans')} className='border-none text-gray-300 sm:py-1.5'>
-              Credits:
+              Credits: {Credits}
             </GhostButton>
             <UserButton>
               <UserButton.MenuItems>
